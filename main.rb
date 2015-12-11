@@ -6,12 +6,12 @@ require_relative 'bread'
 class Main < Gosu::Window
 
 	def initialize
-			super 640, 480
+			super 640, 420
 			self.caption = "Duck Sim 2015i"
 
 			@background = Gosu::Image.new("media/skylandwater.png")
 
-			@player_anim = Gosu::Image::load_tiles("media/duck.png", 50, 50)
+			@player_anim = Gosu::Image::load_tiles("media/duck.png", 255, 154)
 			@player = Player.new(@player_anim)
 
 			 # @timer = Timer.new(@player)
@@ -30,7 +30,7 @@ class Main < Gosu::Window
 
 	def draw 
 		@background.draw(0,0,0)
-		@player.draw
+		@player.draw_anim
 		# @font.draw("Score: #{@player.score}", 10, 10, ZOrder::UI, 1.0, 1.0, 0xff_ffff00)
 		# @font.draw("#{@timer.print_out}", 500, 10, ZOrder::UI, 1.0, 1.0, 0xff_ffff00)
 	end

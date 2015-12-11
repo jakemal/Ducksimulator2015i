@@ -1,10 +1,10 @@
 require "Gosu"
 require_relative "z_order"
-require_relative 'player'
+
 
 class Player
 
-attr_reader :score
+  attr_reader :score, :x, :y 
 	
 	def initialize animation
 		@animation = animation
@@ -13,6 +13,7 @@ attr_reader :score
 		@y = 500
 		@anim = 0
 		@angle = 90
+		@layer = 1
 	end
 
 	def draw
@@ -25,21 +26,21 @@ attr_reader :score
 		img.draw(@x, @y, 1)
 	end
 
-	def move_left
+	def go_left
 		@x -= 5
 		@anim += 1
 
 		@x = 790 if @x <= -100
 	end
 
-	def move_right
+	def go_right
 		@x += 5
 		@anim += 1
 		@x = -90 if @x >= 810
 	end
 
 	def warp(x, y)
-		@x, @y = x,y
+		@x, @y = x, y
 	end
 
 end
