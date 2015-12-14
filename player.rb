@@ -9,8 +9,8 @@ class Player
 	def initialize animation
 		@animation = animation
 		@score = 0
-		@x = 300
-		@y = 500
+		@x = 240
+		@y = 240
 		@anim = 0
 		@angle = 90
 		@layer = 1
@@ -30,13 +30,13 @@ class Player
 		@x -= 5
 		@anim += 1
 
-		@x = 790 if @x <= -100
+		@x = 490 if @x <= -100
 	end
 
 	def go_right
 		@x += 5
 		@anim += 1
-		@x = -90 if @x >= 810
+		@x = -90 if @x >= 475
 	end
 
 	def warp(x, y)

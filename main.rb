@@ -6,7 +6,7 @@ require_relative 'bread'
 class Main < Gosu::Window
 
 	def initialize
-			super 640, 420
+			super 640, 400
 			self.caption = "Duck Sim 2015i"
 
 			@background = Gosu::Image.new("media/skylandwater.png")
